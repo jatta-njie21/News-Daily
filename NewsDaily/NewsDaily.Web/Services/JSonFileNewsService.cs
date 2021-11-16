@@ -17,7 +17,7 @@ namespace NewsDaily.Web.Services
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "news.json"); }
         }
 
-        public IEnumerable<News> GetProducts()
+        public IEnumerable<News> GetNews()
         {
             using (var jsonFileReader = File.OpenText(JsonFileName))
             {

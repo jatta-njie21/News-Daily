@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\somadina computers\Documents\CODELESS\News-Daily\NewsDaily\NewsDaily.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/somadina computers/Documents/CODELESS/News-Daily/NewsDaily/NewsDaily.Web/Components/NewsList.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xOZXdzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/somadina computers/Documents/CODELESS/News-Daily/NewsDaily/NewsDaily.Web/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

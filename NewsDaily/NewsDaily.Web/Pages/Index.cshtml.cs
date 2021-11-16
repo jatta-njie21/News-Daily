@@ -9,7 +9,7 @@ namespace NewsDaily.Web.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger, JSonFileNewsService newsService)
+        public IndexModel(ILogger<IndexModel> logger, JsonFileNewsService newsService)
         {
             _logger = logger;
             NewsService = newsService;

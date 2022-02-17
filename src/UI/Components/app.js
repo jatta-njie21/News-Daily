@@ -1,6 +1,8 @@
-const route = [
-    {path: '/home', component : home},
-]
+import Home from './home.js'
+
+const routes = {
+    '/': Home,
+}
 
 const router = new VueRouter({
     routes

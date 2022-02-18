@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c1bd1c1f-90bf-4022-88f6-fd4a46148fe2": {
+      "ProjectGuid": "c1bd1c1f-90bf-4022-88f6-fd4a46148fe2",
+      "DisplayName": "BlogDaily.API",
+      "ColorIndex": 0
+    },
+    "9cd2b8c0-9bac-4ffc-9431-6f9f302fefa1": {
+      "ProjectGuid": "9cd2b8c0-9bac-4ffc-9431-6f9f302fefa1",
+      "DisplayName": "DataAccessLayer",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -11,7 +11,7 @@ const home = { template :
   <div class="col-md-1"></div>
 </div>
 </div>
-<router-view></router-view>
-</div>
+
+
 ` 
 }

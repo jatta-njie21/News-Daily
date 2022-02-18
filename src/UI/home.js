@@ -1,1 +1,1 @@
-const home = { template : `<h1>Nakala</h1>` }
+const home = { template : `<h1>Home</h1>` }

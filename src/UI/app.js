@@ -3,7 +3,8 @@ const routes = [
 ]
 
 const router = VueRouter.createRouter({
-    routes
+    history: VueRouter.createWebHashHistory(),
+    routes,
 })
 
 const app = Vue.createApp({})

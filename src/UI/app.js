@@ -1,9 +1,11 @@
 const routes = [
     {path: '/home', component: home},
+    {path: '/contact', component: contact},
+    {path: '/authors', component: layout},
 ]
 
 const router = VueRouter.createRouter({
-    // history: VueRouter.createWebHashHistory(),
+    history: VueRouter.createWebHashHistory(),
     routes,
 })
 

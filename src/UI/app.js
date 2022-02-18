@@ -1,13 +1,13 @@
-import Home from './home.js'
+const routes = [
+    {path: '/home', component: home}
+]
 
-const routes = {
-    '/': Home,
-}
-
-const router = new VueRouter({
+const router = VueRouter.createRouter({
     routes
 })
 
-const app = new Vue({
-    router
-}).$mount('#app')
+const app = Vue.createApp({})
+
+app.use(router)
+
+app.mount('#app')

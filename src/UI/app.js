@@ -1,7 +1,10 @@
+import test from './test.vue'
+
 const routes = [
     {path: '/home', component: home},
     {path: '/contact', component: contact},
     {path: '/authors', component: layout},
+    {path :'/test', test},
 ]
 
 const router = VueRouter.createRouter({

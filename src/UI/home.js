@@ -1,3 +1,4 @@
+
 const home = { template : 
 `
 <div class="container">
@@ -30,6 +31,9 @@ const home = { template :
         <li class="page-item"><a class="page-link" href="#">Next</a></li>
       </ul>
     </nav>
+
+    <contact />
+
   </div>
 
   <div class="col-md-1"></div>

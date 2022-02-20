@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,12 +30,15 @@ namespace DataAccessLayer
         //    string query = @"INSERT INTO {tableName} "
         //}
 
-        //public JsonResult GetAuthors(string connectionString)
-        //{
-        //    string query = @"select * from Authors";
+        public JsonResult GetAuthors(string connectionstring)
+        {
+            string query = @"select * from authors";
 
-        //    DataTable dataTable = new();
-        //    string sqlDataSource = _configuration
-        //}
+            DataTable dataTable = new();
+            //string sqldatasource = _configuration
+            SqlDataReader sqlDataReader;
+
+
+        }
     }
 }

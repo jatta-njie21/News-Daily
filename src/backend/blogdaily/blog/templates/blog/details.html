@@ -1,0 +1,14 @@
+{% extends './layout.html' %}
+
+{% block body %}
+
+
+<h2 style = 'color: blue;'>Title - {{items.title}} </h2>
+    <p>{{items.post}}</p>
+    {% if items.isPublish %}
+        <h6 style = 'color: green;'>Published</h6>
+    {% else %}
+        <h6 style = 'color: red;'>UnPublished</h6>
+    {% endif %}
+
+{% endblock %}

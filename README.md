@@ -1,3 +1,2 @@
 # Blog-Daily
-
 ## Text

@@ -2,14 +2,18 @@
 
 {% block body %}
 
-{% for post in posts%}
-    <h2 style = 'color: blue;'>Title - {{post.title}} </h2>
+{% for post in posts %}
+    <h1>Title - {{post.title}}</h1>
+
     <p>{{post.post}}</p>
+
     {% if post.isPublish %}
         <h6 style = 'color: green;'>Published</h6>
     {% else %}
-        <h6 style = 'color: red;'>UnPublished</h6>
+        
+    <h6> UnPublished </h6>
     {% endif %}
+
 {% endfor %}
 
 {% endblock %}

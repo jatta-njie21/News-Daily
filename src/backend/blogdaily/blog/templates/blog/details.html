@@ -1,7 +1,9 @@
+
 {% extends './layout.html' %}
 
 {% block body %}
 
+<a href="{% url 'index' %}">Go back Home</a>
 
 <h2 style = 'color: blue;'>Title - {{items.title}} </h2>
     <p>{{items.post}}</p>
@@ -10,5 +12,8 @@
     {% else %}
         <h6 style = 'color: red;'>UnPublished</h6>
     {% endif %}
+
+
+    <a href="{% url 'index' %}">Go back Home</a>
 
 {% endblock %}

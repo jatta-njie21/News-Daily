@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
+import './index.css'
 
 // HTTP connection to the API
 const httpLink = createHttpLink({

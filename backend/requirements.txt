@@ -9,6 +9,7 @@ graphql-relay==2.0.1
 promise==2.3
 psycopg==3.0.15
 psycopg-binary==3.0.15
+psycopg2-binary==2.9.3
 Rx==1.6.1
 singledispatch==3.7.0
 six==1.16.0

@@ -1,7 +1,8 @@
-import { createApp } from 'vue'
+import { createApp, provide, h } from 'vue'
 import App from './App.vue'
 import router from './router'
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
+import { DefaultApolloClient } from '@vue/apollo-composable'
 import './index.css'
 
 // HTTP connection to the API
@@ -19,5 +20,12 @@ const apolloClient = new ApolloClient({
   cache,
 })
 
+const app = createApp({
+  setup () {
+    provide(DefaultApolloClient, apolloClient)
+  },
+
+  render: () => h(App),
+})
 
 createApp(App).use(router).mount('#app')

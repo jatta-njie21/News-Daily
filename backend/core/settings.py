@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'authentication',
+    'articles',
 
     # refresh tokens are optional
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
@@ -44,9 +45,7 @@ GRAPHENE = {
 }
 
 AUTHENTICATION_BACKENDS = [
-
     "graphql_auth.backends.GraphQLAuthBackend",
-
 ]
 
 GRAPHQL_JWT = {

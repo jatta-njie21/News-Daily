@@ -25,14 +25,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'graphene_django',
-    'authentication',
-    'articles',
 
-    # refresh tokens are optional
+    # Third-party apps
+    'graphene_django',
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
     'graphql_auth',
     'django_filters',
+
+    # Local apps
+    #'authentication',
 
 ]
 
@@ -142,4 +143,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'authentication.BlogUser'
+# AUTH_USER_MODEL = 'authentication.BlogUser'

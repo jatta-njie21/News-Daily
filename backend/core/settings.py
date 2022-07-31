@@ -1,22 +1,66 @@
-from pathlib import Path
+#region imports
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+from pathlib import Path
+import os
+import sys
+from .local_apps import load_apps
+
+#endregion
+
+#region Other settings
+
+    #Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ROOT_URLCONF = 'core.urls'
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+WSGI_APPLICATION = 'core.wsgi.application'
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=vmj#87*^i-c7j0y&%^gy%ah5&kl4tc(tqi4*lg@_i8g96hx^9'
+    #Internationalization
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_TZ = True
 
-# SECURITY WARNING: don't run with debug turned on in production!
+    #Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+    #HTTPS SETTINGS
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE    = True
+SECURE_SSL_REDIRECT   = True
+
+    #HSTS SETTINGS
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+#endregion
+
+#region development / deployment settings
+
+    #SECURITY KEY from environment variable
+with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
+
+
+    # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+#endregion
 
-# Application definition
+#region inherit local setups and Installed apps
+
+def SITE_ROOT():
+    root = os.environ.get("SITE_ROOT", '')
+    if (root == ''):
+        return root
+    elif (root.endswith('/')):
+        return root
+    else:
+        return "%s/" % root
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -26,16 +70,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third-party apps
+    # Third Party Apps
     'graphene_django',
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
     'graphql_auth',
     'django_filters',
-
-    # Local apps
-    #'authentication',
-
 ]
+
+APPS_DIR = os.path.join(BASE_DIR,'apps')
+sys.path.insert(0, os.path.join(APPS_DIR))
+load_apps(BASE_DIR)
+
+#endregion
+
+#region middleware, templates and databases
 
 GRAPHENE = {
     "SCHEMA": "core.schema.schema",
@@ -70,12 +118,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates/',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,12 +137,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'core.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -101,10 +144,11 @@ DATABASES = {
     }
 }
 
+#endregion
+
+#region password validations
 
 # Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -120,27 +164,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#endregion
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.0/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
+#region Static files (CSS, JavaScript, Images)
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# AUTH_USER_MODEL = 'authentication.BlogUser'
+#endregion

@@ -3,7 +3,7 @@
       {
         "name": "utilities",
         "pip": "utilities==1.0.0"
-      },
- 
+      }
+
     ]
 }

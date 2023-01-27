@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'api',
     'blog',
     'authors',
-    'subscribers',
 ]
 
 MIDDLEWARE = [

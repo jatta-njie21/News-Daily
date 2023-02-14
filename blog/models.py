@@ -16,7 +16,7 @@ class Category(models.Model):
         return self.category
     
     
-class Post(TimeStamp):
+class Posts(TimeStamp):
     author   = models.ForeignKey(Author,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE,blank=True,null=True)
     title    = models.CharField(max_length=255)
@@ -31,7 +31,7 @@ class Post(TimeStamp):
 
 
 class PublishedPosts(TimeStamp):
-    post = models.OneToOneField(Post,on_delete=models.CASCADE)
+    post = models.OneToOneField(Posts,on_delete=models.CASCADE)
     
     
     # @receiver(post_save, sender=Post)

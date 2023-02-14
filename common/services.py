@@ -1,5 +1,3 @@
-
-
 def get_all(object):
     return object.all()
 

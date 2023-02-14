@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Category,Post,PublishedPosts
+from .models import Category,Posts,PublishedPosts
 
 
 
 admin.site.register(Category)
 
 
-@admin.register(Post)
+@admin.register(Posts)
 class PostAdmin(admin.ModelAdmin):
     list_display  = ['author','category','title','publish']
     
